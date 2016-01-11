@@ -37,13 +37,17 @@ module.exports = {
     ]
   },
   progress: true,
+
+  'postcss': [
+    require('postcss-inline-svg')(),
+    require('postcss-cssnext')
+  ],
+
   resolve: {
-    modulesDirectories: [
-      'src',
-      'node_modules'
-    ],
-    extensions: ['', '.json', '.js', '.jsx']
+    modulesDirectories: [ 'src', 'shared', 'node_modules' ],
+    extensions: ['', '.json', '.js', '.jsx', '.css']
   },
+
   plugins: [
     new CleanPlugin([assetsPath]),
 
