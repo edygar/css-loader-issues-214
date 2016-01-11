@@ -1,29 +1,46 @@
-.helloMessage {
-  flex: 1;
-  color: rgb(0, 216, 255);
-  font: bold 3.5rem/1.6 arial;
-  text-align: center;
-  font-weight: 300;
-  background: color(#f5f5f5 a(90%));
-}
-.helloMessage > img {
-  vertical-align: middle;
-}
+@value appBrandGlobal from 'shared/colors';
+@value appBrand: #00D8FF;
 
-:global html {
-  font-size: 62.5%;
-  min-height: 100%;
-}
+@svg-load logo url('./react-logo.svg') {
+  #Layer_1 path {
+    fill: #F00;
+    stroke: #F00;
+  }
+};
 
-:global html,
-:global body,
-:global #app-root {
-  background: url('./react-logo.svg') center;
-  margin: 0;
-  padding: 0;
-  flex: 1;
+@svg-load logo2 url('./react-logo.svg') {
+  #Layer_1 path {
+    fill: appBrand;
+    stroke: appBrand;
+  }
+};
+
+@svg-load logo3 url('./react-logo.svg') {
+  #Layer_1 path {
+    fill: appBrandGlobal;
+    stroke: appBrandGlobal;
+  }
+};
+
+.container {
   display: flex;
-  justify-items: stretch;
-  align-items: center;
+}
+
+.sample1 {
+  background: svg-inline(logo) center;
+  width: 100px;
+  height: 89.4736842px;
+}
+
+.sample2 {
+  background: svg-inline(logo2) center;
+  width: 100px;
+  height: 89.4736842px;
+}
+
+.sample3 {
+  background: svg-inline(logo3) center;
+  width: 100px;
+  height: 89.4736842px;
 }
 

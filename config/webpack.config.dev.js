@@ -61,13 +61,13 @@ module.exports = {
   },
 
   'postcss': [
-    require('autoprefixer'),
+    require('postcss-inline-svg')(),
     require('postcss-cssnext')
   ],
 
-  rejolve: {
-    modulesDirectories: [ 'src', 'node_modules' ],
-    extensions: ['', '.json', '.js', '.jsx']
+  resolve: {
+    modulesDirectories: [ 'src', 'shared', 'node_modules' ],
+    extensions: ['', '.json', '.js', '.jsx', '.css']
   },
 
   plugins: [
